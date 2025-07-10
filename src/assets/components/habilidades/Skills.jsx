@@ -7,49 +7,49 @@ const skillsData = [
   {
     id: 1,
     name: "React",
-    icon: "/imagens/habilidades/react.png",
+    icon: "imagens/habilidades/react.png",
     description:
       "Crio interfaces de usuário dinâmicas e reativas, utilizando componentes, hooks e o ecossistema moderno do React para construir SPAs (Single Page Applications) de alta performance.",
   },
   {
     id: 2,
     name: "JavaScript (ES6+)",
-    icon: "/imagens/habilidades/javascript.png",
+    icon: "imagens/habilidades/javascript.png",
     description:
       "Domínio da linguagem base da web, incluindo features modernas (ES6+), manipulação do DOM, assincronicidade (Promises, async/await) para criar interações complexas.",
   },
   {
     id: 3,
     name: "HTML5",
-    icon: "/imagens/habilidades/html.png",
+    icon: "imagens/habilidades/html.png",
     description:
       "Estruturo páginas web com HTML semântico, garantindo acessibilidade, melhor SEO e uma base sólida para estilização e scripts.",
   },
   {
     id: 4,
     name: "CSS3",
-    icon: "/imagens/habilidades/css.png",
+    icon: "imagens/habilidades/css.png",
     description:
       "Estilizo componentes e layouts responsivos utilizando conceitos avançados de CSS, como Flexbox, Grid Layout, e variáveis CSS para temas dinâmicos.",
   },
   {
     id: 5,
     name: "Python",
-    icon: "/imagens/habilidades/python.png",
+    icon: "imagens/habilidades/python.png",
     description:
       "Desenvolvo APIs RESTful e gerencio o ambiente de back-end para aplicações full-stack, utilizando o ecossistema do Node.js com frameworks como Express.",
   },
   {
     id: 6,
     name: "Git",
-    icon: "/imagens/github.png",
+    icon: "imagens/github.png",
     description:
       "Utilizo Git para controle de versão de projetos, trabalhando com branches, merges e colaborando em equipe através de plataformas como GitHub e GitLab.",
   },
   {
     id: 7,
     name: "Bootstrap",
-    icon: "/imagens/habilidades/bootstrap.png",
+    icon: "imagens/habilidades/bootstrap.png",
     description: "Framework para estilização de design responsivos para css",
   },
   {

@@ -13,7 +13,7 @@ import "swiper/css/pagination";
 const ProjetosData = [
   {
     id: 1,
-    image: "/imagens/Projetos/DockTaskBar.png",
+    image: "imagens/Projetos/DockTaskBar.png",
     title: "Dock TaskBar",
     description:
       "Uma Dock minimalista para centralizar todos os icones da area de trabalho, em uma so area deixando a area de trabalho clear",
@@ -21,7 +21,7 @@ const ProjetosData = [
   },
   {
     id: 2,
-    image: "/imagens/Projetos/InstitutoPIB.png",
+    image: "imagens/Projetos/InstitutoPIB.png",
     title: "Instituto PIB VP",
     description:
       "Landing page para uma organização social, focada em apresentar a missão, os valores e os projetos da instituição de forma clara e impactante para atrair voluntários e doadores. ",
