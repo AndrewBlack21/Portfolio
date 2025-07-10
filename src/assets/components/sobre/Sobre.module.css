@@ -1,0 +1,99 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 10%;
+  background-color: var(--background);
+  min-height: 70vh;
+}
+
+.titleWrapper {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.title {
+  font-size: 2.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  position: absolute;
+  top: -30px;
+  left: -120px;
+  background-color: var(--header-background);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: var(--card-shadow);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cvButton {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cvButton:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tela Responsiva */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+    text-align: left; /* Alinha o texto à esquerda no mobile */
+  }
+
+  .titleWrapper {
+    /* Remove a necessidade de posicionamento relativo complexo */
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tag {
+    /* Traz a tag para um fluxo normal, em vez de flutuar */
+    position: static;
+    margin-bottom: 2rem;
+    align-self: flex-start; /* Alinha a tag à esquerda */
+  }
+
+  .title {
+    font-size: 2.2rem;
+    align-self: flex-start; /* Alinha o título à esquerda */
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

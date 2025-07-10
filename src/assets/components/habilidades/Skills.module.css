@@ -1,0 +1,142 @@
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 5%;
+  min-height: 80vh;
+  background-color: var(--background);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Coluna da Esquerda */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skillCard {
+  width: 100px;
+  height: 100px;
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: scale(1.1);
+  background-color: #927bff; /* Um tom mais claro do accent */
+  box-shadow: 0 8px 20px rgba(146, 123, 255, 0.3);
+}
+
+.skillCard img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* Deixa o ícone branco */
+}
+
+/* Coluna da Direita */
+.skillDetails {
+  position: relative;
+  text-align: left;
+  max-width: 450px;
+}
+
+.tag {
+  position: absolute;
+  top: -100px; /* Ajuste para alinhar com o topo do grid */
+  left: -280px; /* Ajuste para ficar no canto */
+  background-color: var(--header-background);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: var(--card-shadow);
+}
+
+.title {
+  font-size: 2.8rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Container da descrição para animar a transição */
+.descriptionContainer {
+  min-height: 120px; /* Altura fixa para não "pular" */
+  transition: all 0.3s ease-in-out;
+}
+
+.descriptionContainer h3 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+}
+
+.descriptionContainer p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.defaultText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Tela responsiva */
+
+@media (max-width: 900px) {
+  /* Um breakpoint um pouco maior para esta seção */
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .skillDetails {
+    text-align: center;
+    max-width: 100%;
+    order: 1; /* Coloca o texto de descrição primeiro */
+  }
+
+  .skillsGrid {
+    order: 2; /* Coloca o grid de ícones depois */
+  }
+
+  .tag {
+    /* Esconde a tag flutuante no mobile para um layout mais limpo */
+    display: none;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .defaultText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .skillCard {
+    width: 80px;
+    height: 80px;
+  }
+  .skillCard img {
+    width: 40px;
+    height: 40px;
+  }
+}

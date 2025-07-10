@@ -1,0 +1,151 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--header-background);
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.logoimg {
+  max-width: 4rem;
+  display: flex;
+}
+
+.logoimg:hover {
+  filter: invert(51%) sepia(82%) saturate(2375%) hue-rotate(222deg)
+    brightness(101%) contrast(102%);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+
+.navbar a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contactButton {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.themeToggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex; /* Para centralizar o SVG/IMG */
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggleButton img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Esconde o botão de menu no desktop e o link de contato mobile */
+.menuButton,
+.mobileContact {
+  display: none;
+}
+
+/* Classe para travar o scroll quando o menu estiver aberto */
+.bodyNoScroll {
+  overflow: hidden;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  /* 1. Transforma a navbar em um menu lateral que sai da tela */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--header-background);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 2. A classe .navbarOpen traz o menu para a tela */
+  .navbarOpen {
+    transform: translateX(0);
+  }
+
+  .navbar ul {
+    flex-direction: column; /* Empilha os links verticalmente */
+    gap: 2.5rem;
+  }
+
+  .navbar a {
+    font-size: 1.5rem; /* Aumenta a fonte dos links no menu mobile */
+  }
+
+  /* 3. Esconde o botão de contato original e mostra o do menu mobile */
+  .contactButton {
+    display: none;
+  }
+  .mobileContact {
+    display: block;
+    margin-top: 1rem;
+  }
+  .mobileContact a {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+  }
+
+  /* 4. Mostra o botão de menu hambúrguer */
+  .menuButton {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    z-index: 1001; /* Garante que ele fique acima da navbar */
+  }
+}

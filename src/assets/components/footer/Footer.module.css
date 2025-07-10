@@ -1,0 +1,121 @@
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.footer {
+  padding: 5rem 2rem;
+  background-color: var(--background);
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.footerTop {
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 2rem;
+}
+
+.socialLink {
+  width: 5rem; /* Define o tamanho do CÍRCULO roxo */
+  height: 5rem;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.socialLink img {
+  /* Define o tamanho do ÍCONE dentro do círculo */
+  /* Usar % é ótimo, pois se você mudar o tamanho do .socialLink, o ícone se ajusta junto. */
+  width: 50%;
+  height: 50%;
+}
+
+.socialLink:hover {
+  transform: translateY(-10%) scale(1.1);
+  background-color: #927bff;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: var(--accent-color);
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.copyright {
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  /* Define o tamanho do ÍCONE dentro do círculo */
+  /* Usar % é ótimo, pois se você mudar o tamanho do .socialLink, o ícone se ajusta junto. */
+  width: 5rem;
+  height: 3rem;
+}
+
+.logo:hover {
+  transform: translateY(-10%) scale(1.1);
+}
+.emailWrapper {
+  flex: 1;
+  max-width: 30%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.emailAnimate {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
+
+.emailAnimate span {
+  padding-right: 2rem;
+  font-weight: 500;
+}
+
+/* --- Tela Responsiva --- */
+@media (max-width: 768px) {
+  .tag {
+    top: 1rem;
+    left: 1rem;
+  }
+  .footerBottom {
+    flex-direction: column; /* Empilha os elementos */
+    gap: 1rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .emailWrapper {
+    max-width: 100%; /* Permite que o email ocupe toda a largura */
+    order: 3; /* Coloca o email por último */
+  }
+  .copyright {
+    order: 1; /* Coloca os direitos no topo */
+  }
+  .logo {
+    order: 2; /* Coloca o logo no meio */
+  }
+}
