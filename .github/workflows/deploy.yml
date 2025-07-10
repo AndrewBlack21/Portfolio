@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Use uma versão LTS do Node
+          node-version: 20 # Use uma versão LTS do Node
 
       # 3. Instala todas as dependências do seu projeto (React, Vite, etc.)
       - name: Install dependencies
