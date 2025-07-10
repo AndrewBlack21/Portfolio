@@ -1,0 +1,53 @@
+# Nome do fluxo de trabalho que aparecerá na aba "Actions" do GitHub
+name: Deploy to GitHub Pages
+
+# Gatilho: este fluxo roda toda vez que você faz um 'push' para a branch 'main'
+on:
+  push:
+    branches: [main]
+
+# Permissões necessárias para que a Action possa publicar no GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tarefas a serem executadas
+jobs:
+  build-and-deploy:
+    # Usa a versão mais recente do Ubuntu (Linux) como ambiente
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixa o seu código do repositório
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Configura o ambiente Node.js para rodar o build
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Use uma versão LTS do Node
+
+      # 3. Instala todas as dependências do seu projeto (React, Vite, etc.)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Roda o comando de build do Vite (cria a pasta 'dist' otimizada)
+      - name: Build
+        run: npm run build
+
+      # 5. Configura o GitHub Pages para receber os arquivos
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 6. Faz o upload dos arquivos da pasta 'dist' para o GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+      # 7. Finaliza o deploy no ambiente do GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
