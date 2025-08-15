@@ -1,8 +1,17 @@
 import React from "react";
-import styles from "./Projetos.module.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaBootstrap,
+  FaPython,
+} from "react-icons/fa";
+import "swiper/css";
+import "swiper/css/navigation";
+import styles from "./Projetos.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,7 +26,8 @@ const ProjetosData = [
     title: "Dock TaskBar",
     description:
       "Uma Dock minimalista para centralizar todos os icones da area de trabalho, em uma so area deixando a area de trabalho clear",
-    html: "https://github.com/AndrewBlack21/Dock-Taskbar-Python",
+    link: "https://github.com/AndrewBlack21/Dock-Taskbar-Python",
+    techs: [<FaPython key="python" />, <FaHtml5 key="html" />],
   },
   {
     id: 2,
@@ -25,7 +35,8 @@ const ProjetosData = [
     title: "Instituto PIB VP",
     description:
       "Landing page para uma organização social, focada em apresentar a missão, os valores e os projetos da instituição de forma clara e impactante para atrair voluntários e doadores. ",
-    html: "https://andrewblack21.github.io/PIB-VP/",
+    link: "https://andrewblack21.github.io/PIB-VP/",
+    techs: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />],
   },
   {
     id: 3,
@@ -33,59 +44,82 @@ const ProjetosData = [
     title: "Instituto Sina Azul",
     description:
       "Plataforma web para uma ONG de apoio a crianças com autismo. O site serve como um portal de informações, recursos para pais e um canal para doações online.",
-    html: "https://andrewblack21.github.io/Instituto-Sina-Azul/",
+    link: "https://institutosinalazul.org/",
+    techs: [
+      <FaReact key="react" />,
+      <FaCss3Alt key="css" />,
+      <FaJs key="js" />,
+    ],
+  },
+  {
+    id: 4,
+    title: "Gerador de QR Code",
+    image: "imagens/Projetos/generate-qr-code.png",
+    link: "https://andrewblack21.github.io/Gerador-de-QRCode/",
+    description: "Gerador de QR Code para links",
+    techs: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />],
+  },
+  {
+    id: 5,
+    title: "Relogio Mundial",
+    image: "imagens/Projetos/relogio mundial.png",
+    link: "https://andrewblack21.github.io/Projeto-Relogio-Digital-Temporizador-Cron-metro/",
+    description: "Relogio Mundial com temporizador, e cronometro ",
+    techs: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />],
+  },
+  {
+    id: 2,
+    title: "To Do List",
+    image: "imagens/Projetos/to-do-list.png",
+    link: "https://andrewblack21.github.io/To-Do-List-projeto/",
+    description: "To Do List simples, para organizar tarefas diarias",
+    techs: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />],
+  },
+  {
+    id: 3,
+    title: "Projeto Treino Femino",
+    image: "imagens/Projetos/projeto treino.png",
+    link: "https://andrewblack21.github.io/Projeto-de_treino/",
+    description:
+      "Uma aplicação de treinos femininos, com dicas e treinos personalizados.",
+    techs: [<FaHtml5 key="html" />, <FaCss3Alt key="css" />, <FaJs key="js" />],
   },
 ];
 
-const Projetos = () => {
+export default function Projetos() {
   return (
-    <section id="destaques" className={styles.featuredProjects}>
-      <h2 className={styles.title}>Projetos em destaque</h2>
-
-      {/* Swiper configuração */}
+    <div id="projetos" className={styles.container}>
+      <h2 className={styles.title}>Meus Projetos</h2>
       <Swiper
-        modules={[Navigation, Pagination, A11y, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
+        slidesPerView={1.2}
+        spaceBetween={20}
         navigation
-        pagination={{ clickable: true }}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
         breakpoints={{
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
+          768: { slidesPerView: 2.5 },
+          1024: { slidesPerView: 4 },
         }}
-        className={styles.swiperContainer}
+        modules={[Navigation]}
+        className={styles.swiper}
       >
-        {ProjetosData.map((Projetos) => (
-          <SwiperSlide key={Projetos.id}>
-            <div className={styles.card}>
-              <div className={styles.imageContainer}>
-                <a href={Projetos.html}>
-                  <img
-                    src={Projetos.image}
-                    className={styles.cardImage}
-                    alt={Projetos.title}
-                  />
-                </a>
+        {ProjetosData.map((proj, index) => (
+          <SwiperSlide key={index}>
+            <a
+              href={proj.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+            >
+              <div className={styles.thumbnail}>
+                <img src={proj.image} alt={proj.title} />
+                <div className={styles.overlay}>
+                  <p>{proj.description}</p>
+                </div>
               </div>
-              <h3 className={styles.cardTitle}>{Projetos.title}</h3>
-              <p className={styles.cardDescription}>{Projetos.description}</p>
-            </div>
+              <div className={styles.techs}>{proj.techs}</div>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
-};
-
-export default Projetos;
+}

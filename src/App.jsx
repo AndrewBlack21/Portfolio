@@ -21,7 +21,7 @@ function App() {
         <Sobre />
         <Skills />
         <Projetos />
-        <OtherProjects />
+        {/* <OtherProjects /> */}
         <Services />
         <Footer />
       </main>
