@@ -81,6 +81,11 @@
   height: 24px;
 }
 
+.themeToggleButton:hover {
+  filter: invert(51%) sepia(82%) saturate(2375%) hue-rotate(222deg)
+    brightness(101%) contrast(102%);
+}
+
 /* Esconde o botão de menu no desktop e o link de contato mobile */
 .menuButton,
 .mobileContact {
