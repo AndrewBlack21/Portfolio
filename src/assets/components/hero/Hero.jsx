@@ -31,7 +31,10 @@ const Hero = () => {
           <a href={Curriculo} download className={styles.buttonPrimary}>
             Download CV
           </a>
-          <a href="" className={styles.buttonSecondary}>
+          <a
+            href="https://wa.me/5513981142641"
+            className={styles.buttonSecondary}
+          >
             Entra em contato
           </a>
         </div>

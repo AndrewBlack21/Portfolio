@@ -56,7 +56,7 @@ const Header = ({ theme, toggleTheme }) => {
         </ul>
       </nav>
       <div className={styles.actions}>
-        <a href="#contato" className={styles.contactButton}>
+        <a href="https://wa.me/5513981142641" className={styles.contactButton}>
           Contato
         </a>
         <button onClick={toggleTheme} className={styles.themeToggleButton}>
