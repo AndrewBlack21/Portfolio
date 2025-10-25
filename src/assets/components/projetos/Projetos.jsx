@@ -9,6 +9,7 @@ import {
   FaBootstrap,
   FaPython,
 } from "react-icons/fa";
+import { SiPostgresql } from "react-icons/si";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./Projetos.module.css";
@@ -27,7 +28,19 @@ const ProjetosData = [
     description:
       "Uma Dock minimalista para centralizar todos os icones da area de trabalho, em uma so area deixando a area de trabalho clear",
     link: "https://github.com/AndrewBlack21/Dock-Taskbar-Python",
-    techs: [<FaPython key="python" />, <FaHtml5 key="html" />],
+    techs: [<FaPython key="python" />],
+  },
+  {
+    id: 1,
+    image: "imagens/Projetos/iphocell.png",
+    title: "E-commercer Iphocell",
+    description: "Uma loja e-commercer de vendas de celular e acessorios",
+    link: "https://andrewblack21.github.io/loja-celulares/",
+    techs: [
+      <FaReact key="react" />,
+      <SiPostgresql key="SQL" />,
+      <FaJs key="js" />,
+    ],
   },
   {
     id: 2,

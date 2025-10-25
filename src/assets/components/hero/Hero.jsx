@@ -5,12 +5,27 @@ import githubIcon from "/imagens/github.png";
 import LinkedinIcon from "/imagens/linkedin.png";
 import Curriculo from "/CurriculoFrontEnd.pdf";
 
+import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
         <p className={styles.title}>Olá, eu sou o Andrew Ferreira</p>
-        <h1 className={styles.greeting}>Desenvolvedor Front-End</h1>
+        <h1 className={styles.greeting}>
+          <Typewriter
+            words={[
+              "Desenvolvedor Front-end",
+              "Busca soluções para o impossivel",
+              "Apaixonado por tecnologia e seu desenvolvimento",
+            ]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          ></Typewriter>
+        </h1>
         <div className={styles.socials}>
           <a
             href="https://www.linkedin.com/in/andrewsilvaferreira/"

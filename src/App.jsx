@@ -9,6 +9,7 @@ import Projetos from "./assets/components/projetos/Projetos";
 import OtherProjects from "./assets/components/Allprojects/OtherProjects";
 import Services from "./assets/components/services/Services";
 import Footer from "./assets/components/footer/Footer";
+import FadeInSection from "./assets/components/Animation/FadeInSection";
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -17,13 +18,29 @@ function App() {
     <>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
-        <Hero />
-        <Sobre />
-        <Skills />
-        <Projetos />
+        <FadeInSection>
+          <Hero />
+        </FadeInSection>
+
+        <FadeInSection>
+          <Sobre />
+        </FadeInSection>
+
+        <FadeInSection>
+          <Skills />
+        </FadeInSection>
+
+        <FadeInSection>
+          <Projetos />
+        </FadeInSection>
         {/* <OtherProjects /> */}
-        <Services />
-        <Footer />
+        <FadeInSection>
+          <Services />
+        </FadeInSection>
+
+        <FadeInSection>
+          <Footer />
+        </FadeInSection>
       </main>
     </>
   );
