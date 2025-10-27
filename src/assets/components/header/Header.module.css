@@ -154,3 +154,37 @@
     z-index: 1001; /* Garante que ele fique acima da navbar */
   }
 }
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaço entre PT, | e EN */
+  border: 1px solid var(--accent-color); /* ADAPTADO: Usa sua cor de destaque */
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+
+/* Estilo base para os botões PT e EN */
+.languageSwitcher button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary); /* ADAPTADO: Usa sua cor de texto secundária */
+  transition: color 0.3s ease;
+}
+
+/* Estilo para o idioma ATIVO */
+.languageSwitcher .activeLanguage {
+  color: var(--accent-color); /* ADAPTADO: Usa sua cor de destaque */
+}
+
+/* Estilo do separador | */
+.separator {
+  color: var(--text-secondary); /* ADAPTADO: Usa sua cor de texto secundária */
+  font-size: 1rem;
+}

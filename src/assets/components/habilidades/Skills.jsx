@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Skills.module.css";
+import { useTranslation } from "react-i18next";
 
 // --- DADOS DAS HABILIDADES ---
 // Variavel como lista para estar passando as habilidades que quero incrementar, posso adicionar quantas eu quiser
@@ -66,6 +67,7 @@ const skillsData = [
 const Skills = () => {
   // Estado para guardar a habilidade que está em hover
   const [activeSkill, setActiveSkill] = useState(null);
+  const { t } = useTranslation();
 
   const handleMouseEnter = (skill) => {
     setActiveSkill(skill);
@@ -93,18 +95,19 @@ const Skills = () => {
 
         {/* Coluna da Direita: Detalhes da Habilidade */}
         <div className={styles.skillDetails}>
-          <h2 className={styles.title}>HABILIDADES</h2>
+          <h2 className={styles.title}>{t("skills.title")}</h2>
 
           <div className={styles.descriptionContainer}>
             {activeSkill ? (
               <>
                 <h3>{activeSkill.name}</h3>
-                <p>{activeSkill.description}</p>
+                <p>{t(activeSkill.descriptionKey)}</p>
               </>
             ) : (
-              <p className={styles.defaultText}>
-                PASSE O CURSO DO MOUSE <br /> PARA LER O CARD
-              </p>
+              <p
+                className={styles.defaultText}
+                dangerouslySetInnerHTML={{ __html: t("skills.hover_prompt") }}
+              />
             )}
           </div>
         </div>

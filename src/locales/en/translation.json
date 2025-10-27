@@ -1,0 +1,53 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I am Andrew Ferreira",
+    "typewriter1": "Front-end Developer",
+    "typewriter2": "Seeking solutions for the impossible",
+    "typewriter3": "Passionate about technology and its development",
+    "downloadCV": "Download CV",
+    "contact": "Get in touch"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Passionate Front-end Developer focused on creating interactive, scalable, and high-performance digital experiences. I have solid experience in challenging projects, using modern technologies like React.js, HTML, CSS, JavaScript, Bootstrap, Swiper, as well as knowledge in Python and UX/UI Design. I am an enthusiast in building reusable components, creating intuitive interfaces, and constantly improving the performance and accessibility of applications. I always seek to enhance the user experience, offering innovative and efficient solutions."
+  },
+  "skills": {
+    "title": "SKILLS",
+    "hover_prompt": "HOVER THE MOUSE <br /> OVER A CARD TO READ",
+    "react_desc": "I create dynamic and reactive user interfaces, using components, hooks, and the modern React ecosystem to build high-performance SPAs (Single Page Applications).",
+    "javascript_desc": "Mastery of the web's core language, including modern features (ES6+), DOM manipulation, and asynchronicity (Promises, async/await) to create complex interactions.",
+    "html_desc": "I structure web pages with semantic HTML, ensuring accessibility, better SEO, and a solid foundation for styling and scripts.",
+    "css_desc": "I style components and responsive layouts using advanced CSS concepts like Flexbox, Grid Layout, and CSS variables for dynamic themes.",
+    "python_desc": "I develop RESTful APIs and manage the back-end environment for full-stack applications, using the Node.js ecosystem with frameworks like Express.",
+    "git_desc": "I use Git for project version control, working with branches, merges, and collaborating in teams through platforms like GitHub and GitLab.",
+    "bootstrap_desc": "A framework for styling responsive designs with CSS.",
+    "figma_desc": "A tool used to create high-fidelity design mockups and previews."
+  },
+  "projects": {
+    "title": "My Projects",
+    "dock_taskbar_desc": "A minimalist Dock to centralize all desktop icons in a single area, leaving the desktop clean.",
+    "iphocell_desc": "An e-commerce store for selling mobile phones and accessories.",
+    "pib_vp_desc": "A landing page for a social organization, focused on presenting the mission, values, and projects of the institution in a clear and impactful way to attract volunteers and donors.",
+    "sina_azul_desc": "A web platform for an NGO supporting children with autism. The site serves as an information portal, a resource for parents, and a channel for online donations.",
+    "qrcode_desc": "A QR Code generator for links.",
+    "clock_desc": "A World Clock with a timer and stopwatch.",
+    "todo_list_desc": "A simple To-Do List to organize daily tasks.",
+    "training_desc": "An application for female workouts, with tips and personalized training."
+  },
+  "footer": {
+    "developed_by": "Developed by - Andrew Ferreira"
+  },
+  "services": {
+    "developmentTitle": "Development",
+    "developmentDescription": "I develop front-ends for professional websites, blogs, SaaS, landing pages, e-commerce, and other websites, with a focus on performance and responsiveness.",
+    "designTitle": "UX/UI Design",
+    "designDescription": "I design interfaces in Figma in a way that is clear, objective, and above all, intuitive for the user experience, creating a cohesive navigation flow."
+  }
+}

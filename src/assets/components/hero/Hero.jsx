@@ -6,17 +6,20 @@ import LinkedinIcon from "/imagens/linkedin.png";
 import Curriculo from "/CurriculoFrontEnd.pdf";
 
 import { Typewriter } from "react-simple-typewriter";
+import { useTranslation } from "react-i18next";
+
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <p className={styles.title}>Olá, eu sou o Andrew Ferreira</p>
+        <p className={styles.title}>{t("hero.greeting")}</p>
         <h1 className={styles.greeting}>
           <Typewriter
             words={[
-              "Desenvolvedor Front-end",
-              "Busca soluções para o impossivel",
-              "Apaixonado por tecnologia e seu desenvolvimento",
+              t("hero.typewriter1"),
+              t("hero.typewriter2"),
+              t("hero.typewriter3"),
             ]}
             loop={true}
             cursor
@@ -44,13 +47,13 @@ const Hero = () => {
         </div>
         <div className={styles.buttons}>
           <a href={Curriculo} download className={styles.buttonPrimary}>
-            Download CV
+            {t("hero.downloadCV")}
           </a>
           <a
             href="https://wa.me/5513981142641"
             className={styles.buttonSecondary}
           >
-            Entra em contato
+            {t("hero.contact")}
           </a>
         </div>
       </div>

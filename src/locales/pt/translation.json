@@ -1,0 +1,53 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "Sobre",
+    "projects": "Projeto",
+    "services": "Serviço",
+    "contact": "Contato"
+  },
+  "skills": {
+    "title": "HABILIDADES",
+    "hover_prompt": "PASSE O CURSO DO MOUSE <br /> PARA LER O CARD",
+    "react_desc": "Crio interfaces de usuário dinâmicas e reativas, utilizando componentes, hooks e o ecossistema moderno do React para construir SPAs (Single Page Applications) de alta performance.",
+    "javascript_desc": "Domínio da linguagem base da web, incluindo features modernas (ES6+), manipulação do DOM, assincronicidade (Promises, async/await) para criar interações complexas.",
+    "html_desc": "Estruturo páginas web com HTML semântico, garantindo acessibilidade, melhor SEO e uma base sólida para estilização e scripts.",
+    "css_desc": "Estilizo componentes e layouts responsivos utilizando conceitos avançados de CSS, como Flexbox, Grid Layout, e variáveis CSS para temas dinâmicos.",
+    "python_desc": "Desenvolvo APIs RESTful e gerencio o ambiente de back-end para aplicações full-stack, utilizando o ecossistema do Node.js com frameworks como Express.",
+    "git_desc": "Utilizo Git para controle de versão de projetos, trabalhando com branches, merges e colaborando em equipe através de plataformas como GitHub e GitLab.",
+    "bootstrap_desc": "Framework para estilização de design responsivos para css",
+    "figma_desc": "Uma ferramenta utilizada para criar mockoup de pre-visualizações de design de alta fidelidade"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "dock_taskbar_desc": "Uma Dock minimalista para centralizar todos os icones da area de trabalho, em uma so area deixando a area de trabalho clear",
+    "iphocell_desc": "Uma loja e-commercer de vendas de celular e acessorios",
+    "pib_vp_desc": "Landing page para uma organização social, focada em apresentar a missão, os valores e os projetos da instituição de forma clara e impactante para atrair voluntários e doadores.",
+    "sina_azul_desc": "Plataforma web para uma ONG de apoio a crianças com autismo. O site serve como um portal de informações, recursos para pais e um canal para doações online.",
+    "qrcode_desc": "Gerador de QR Code para links",
+    "clock_desc": "Relogio Mundial com temporizador, e cronometro",
+    "todo_list_desc": "To Do List simples, para organizar tarefas diarias",
+    "training_desc": "Uma aplicação de treinos femininos, com dicas e treinos personalizados."
+  },
+  "hero": {
+    "greeting": "Olá, eu sou o Andrew Ferreira",
+    "typewriter1": "Desenvolvedor Front-end",
+    "typewriter2": "Busca soluções para o impossivel",
+    "typewriter3": "Apaixonado por tecnologia e seu desenvolvimento",
+    "downloadCV": "Download CV",
+    "contact": "Entra em contato"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "description": "Desenvolvedor Front-end apaixonado por criar experiências digitais interativas, escaláveis e com alto desempenho. Tenho sólida experiência em projetos desafiadores, utilizando tecnologias modernas como React.js, HTML, CSS, JavaScript, Bootstrap, Swiper, além de conhecimentos em Python e Design UX/UI. Sou entusiasta na construção de componentes reutilizáveis, na criação de interfaces intuitivas e no aprimoramento constante da performance e acessibilidade das aplicações. Busco sempre melhorar a experiência do usuário, oferecendo soluções inovadoras e eficientes."
+  },
+  "services": {
+    "developmentTitle": "Desenvolvimento",
+    "developmentDescription": "Desenvolvo frontend de sites profissionais, blogs, SaaS, landing pages, e-commerce e entre outros websites, com foco em performance e responsividade.",
+    "designTitle": "Design UX/UI",
+    "designDescription": "Desenho interfaces no Figma de forma que ela seja clara, objetiva e principalmente intuitiva para a experiência do usuário, criando um fluxo de navegação coeso."
+  },
+  "footer": {
+    "developed_by": "Desenvolvido por - Andrew Ferreira"
+  }
+}
