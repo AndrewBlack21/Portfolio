@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import profilePic from "/imagens/perfil.png";
+import profilePic from "/imagens/FotoPerfil.jpg";
 import githubIcon from "/imagens/github.png";
 import LinkedinIcon from "/imagens/linkedin.png";
 import Curriculo from "/CurriculoFrontEnd.pdf";
