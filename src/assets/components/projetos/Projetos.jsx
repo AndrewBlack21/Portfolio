@@ -11,6 +11,19 @@ import styles from "./Projetos.module.css";
 // Os dados agora usam chaves de tradução
 const ProjetosData = [
   {
+    id: 9,
+    title: "FinAi Landign PAge",
+    image: "imagens/Projetos/FinAI.png",
+    link: "https://andrewblack21.github.io/finai-landing/",
+    descriptionKey:
+      "O FinAI é um conceito de aplicativo de controle financeiro com inteligência artificial. Esta landing page foi criada para demonstrar o produto, converter visitantes em usuários beta e servir como peça de portfólio de desenvolvimento front-end.",
+    techs: [
+      <FaReact key="react" />,
+      <FaCss3Alt key="css" />,
+      <FaJs key="js" />,
+    ],
+  },
+  {
     id: 1,
     image: "imagens/Projetos/DockTaskBar.png",
     title: "Dock TaskBar",
