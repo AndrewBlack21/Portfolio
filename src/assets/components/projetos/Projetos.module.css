@@ -36,13 +36,36 @@
 
 .swiper {
   width: 100%;
-  padding: 2rem 0 3rem !important;
+  padding: 3rem 0 3.5rem !important;
+  overflow: visible !important;
+}
+
+/* Fade nas bordas laterais */
+.swiperWrapper::before,
+.swiperWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.swiperWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background) 0%, transparent 100%);
+}
+
+.swiperWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background) 0%, transparent 100%);
 }
 
 /* ===== SLIDE ===== */
 .slide {
-  width: 420px !important;
-  height: 300px !important;
+  width: 600px !important;
+  height: 390px !important;
   transition: transform 0.5s ease;
 }
 
@@ -51,16 +74,16 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
   background: #111;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
   transition: box-shadow 0.4s ease;
 }
 
 .card:hover {
-  box-shadow: 0 20px 60px rgba(123, 97, 255, 0.3);
+  box-shadow: 0 24px 70px rgba(123, 97, 255, 0.28);
 }
 
 /* ===== IMAGEM ===== */
@@ -70,11 +93,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  object-position: top center;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card:hover .cardImage {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 /* ===== OVERLAY ===== */
@@ -83,9 +107,9 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(10, 8, 30, 0.97) 0%,
-    rgba(10, 8, 30, 0.75) 50%,
-    rgba(10, 8, 30, 0.1) 100%
+    rgba(8, 6, 24, 0.97) 0%,
+    rgba(8, 6, 24, 0.65) 45%,
+    rgba(8, 6, 24, 0.05) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -99,9 +123,9 @@
 
 /* ===== OVERLAY CONTENT ===== */
 .overlayContent {
-  padding: 1.5rem;
+  padding: 1.8rem 1.6rem;
   width: 100%;
-  transform: translateY(12px);
+  transform: translateY(14px);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -113,7 +137,7 @@
 .techBadges {
   display: flex;
   gap: 0.4rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
   flex-wrap: wrap;
 }
 
@@ -121,38 +145,38 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: rgba(123, 97, 255, 0.25);
+  width: 30px;
+  height: 30px;
+  background: rgba(123, 97, 255, 0.22);
   border: 1px solid rgba(123, 97, 255, 0.4);
-  border-radius: 6px;
+  border-radius: 7px;
   color: #c4b5fd;
-  font-size: 0.85rem;
-  backdrop-filter: blur(4px);
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
 }
 
-/* Título */
+/* Titulo */
 .cardTitle {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.45rem;
   line-height: 1.3;
 }
 
-/* Descrição */
+/* Descricao */
 .cardDesc {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.72);
-  line-height: 1.5;
-  margin: 0 0 1rem;
+  line-height: 1.55;
+  margin: 0 0 1.1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Botões de ação */
+/* Botoes de acao */
 .cardActions {
   display: flex;
   gap: 0.6rem;
@@ -163,9 +187,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  font-size: 0.78rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9px;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -174,13 +198,13 @@
 .btnRepo {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
 }
 
 .btnRepo:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 .btnLive {
@@ -194,31 +218,31 @@
   transform: translateY(-1px);
 }
 
-/* ===== BOTÕES DE NAVEGAÇÃO ===== */
+/* ===== BOTOES DE NAVEGACAO ===== */
 .navBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: var(--header-background);
-  border: 1px solid rgba(123, 97, 255, 0.3);
+  border: 1.5px solid rgba(123, 97, 255, 0.35);
   color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
 }
 
 .navBtn:hover {
   background: var(--accent-color);
   color: #fff;
   border-color: var(--accent-color);
-  box-shadow: 0 4px 20px rgba(123, 97, 255, 0.4);
+  box-shadow: 0 4px 22px rgba(123, 97, 255, 0.45);
 }
 
 .navBtn svg {
@@ -239,7 +263,7 @@
   display: flex;
   justify-content: center;
   gap: 6px;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
 }
 
 .dot {
@@ -248,11 +272,12 @@
   border-radius: 50%;
   background: var(--text-secondary);
   opacity: 0.3;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 
 .dotActive {
-  width: 20px;
+  width: 22px;
   border-radius: 3px;
   background: var(--accent-color);
   opacity: 1;
@@ -260,20 +285,26 @@
 
 /* ===== SWIPER OVERRIDES ===== */
 :global(.swiper-slide-active) .card {
-  box-shadow: 0 20px 50px rgba(123, 97, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(123, 97, 255, 0.22);
 }
 
-/* Desativa os botões padrão do swiper */
 :global(.swiper-button-next),
 :global(.swiper-button-prev) {
   display: none !important;
 }
 
 /* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1100px) {
+  .slide {
+    width: 500px !important;
+    height: 340px !important;
+  }
+}
+
 @media (max-width: 900px) {
   .slide {
-    width: 340px !important;
-    height: 240px !important;
+    width: 400px !important;
+    height: 280px !important;
   }
 
   .title {
@@ -283,21 +314,25 @@
   .btnPrev {
     left: 0.5rem;
   }
-
   .btnNext {
     right: 0.5rem;
+  }
+
+  .swiperWrapper::before,
+  .swiperWrapper::after {
+    width: 60px;
   }
 }
 
 @media (max-width: 600px) {
   .slide {
-    width: 85vw !important;
-    height: 220px !important;
+    width: 88vw !important;
+    height: 240px !important;
   }
 
   .navBtn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
 
   .title {
@@ -306,5 +341,10 @@
 
   .cardActions {
     flex-direction: column;
+  }
+
+  .swiperWrapper::before,
+  .swiperWrapper::after {
+    display: none;
   }
 }

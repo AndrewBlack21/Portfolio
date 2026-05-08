@@ -11,6 +11,9 @@ import {
   FaGithub,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
+import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
+
 import { SiPostgresql } from "react-icons/si";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,6 +21,22 @@ import "swiper/css/effect-coverflow";
 import styles from "./Projetos.module.css";
 
 const ProjetosData = [
+  {
+    id: 10,
+    title: "MedWay",
+    image: "imagens/Projetos/MedWay.jpeg",
+    link: "https://github.com/AndrewBlack21/MedWay",
+    repo: "https://github.com/AndrewBlack21/MedWay",
+    descriptionKey:
+      "Aplicação para representantes farmaceuticos, onde podem gerar roteiros de visitas para ajustar seu planejamento e metodologia.",
+    techs: [
+      <FaReact key="react" />,
+      <SiTypescript key="typescript" />,
+      <RiSupabaseFill key="Supabase" />,
+      <SiPostgresql key="SQL" />,
+      <RiTailwindCssFill key="Tailwind" />,
+    ],
+  },
   {
     id: 9,
     title: "FinAI Landing Page",
