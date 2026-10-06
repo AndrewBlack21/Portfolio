@@ -22,6 +22,21 @@ import styles from "./Projetos.module.css";
 
 const ProjetosData = [
   {
+    id: 11,
+    title: "SeControla Ai",
+    image: "imagens/Projetos/SeControlaAi.png",
+    link: "https://github.com/AndrewBlack21/finance-app",
+    repo: "https://github.com/AndrewBlack21/finance-app",
+    descriptionKey: "projects.secontrola_desc",
+    techs: [
+      <FaReact key="react" />,
+      <SiTypescript key="typescript" />,
+      <RiSupabaseFill key="supabase" />,
+      <SiPostgresql key="postgresql" />,
+      <RiTailwindCssFill key="tailwind" />,
+    ],
+  },
+  {
     id: 10,
     title: "MedWay",
     image: "imagens/Projetos/MedWay.jpeg",
