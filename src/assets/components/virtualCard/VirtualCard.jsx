@@ -6,9 +6,9 @@ import {
   FaWhatsapp,
   FaShareAlt,
   FaDownload,
-  FaCopy,
   FaCheck,
   FaGlobe,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import styles from "./VirtualCard.module.css";
@@ -17,6 +17,30 @@ const WHATSAPP = "5513981142641";
 const LINKEDIN = "https://linkedin.com/in/andrewferreira-680101197";
 const GITHUB = "https://github.com/AndrewBlack21";
 const PORTFOLIO = "https://andrewblack21.github.io/Portfolio/#cartao";
+
+const featuredProjects = [
+  {
+    title: "MedWay",
+    image: "./imagens/Projetos/MedWay.jpeg",
+    description:
+      "Aplicação para representantes farmacêuticos com planejamento e roteirização de visitas.",
+    link: "https://github.com/AndrewBlack21/MedWay",
+  },
+  {
+    title: "SeControla Ai",
+    image: "./imagens/Projetos/secontrola.png",
+    description:
+      "Aplicação de controle financeiro pessoal com dashboard, transações, cartões, faturas e relatórios.",
+    link: "https://github.com/AndrewBlack21/finance-app",
+  },
+  {
+    title: "FinAI Landing Page",
+    image: "./imagens/Projetos/FinAI.png",
+    description:
+      "Landing page de um conceito de aplicativo financeiro com IA, focada em conversão.",
+    link: "https://andrewblack21.github.io/finai-landing/",
+  },
+];
 
 export default function VirtualCard() {
   const { t } = useTranslation();
@@ -180,6 +204,45 @@ export default function VirtualCard() {
             </div>
           </div>
         </aside>
+      </section>
+
+      <section className={styles.projectsSection}>
+        <div className={styles.projectsHeader}>
+          <span>{t("card.projectsLabel")}</span>
+          <h2>{t("card.projectsTitle")}</h2>
+          <p>{t("card.projectsDescription")}</p>
+        </div>
+
+        <div className={styles.projectsGrid}>
+          {featuredProjects.map((project) => (
+            <a
+              key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.projectCard}
+            >
+              <div className={styles.projectImageWrap}>
+                <img src={project.image} alt={project.title} className={styles.projectImage} />
+                <span className={styles.projectArrow}>
+                  <FaExternalLinkAlt />
+                </span>
+              </div>
+              <div className={styles.projectContent}>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <span className={styles.projectCta}>
+                  {t("card.projectCta")} <FaExternalLinkAlt />
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <button className={styles.projectsPortfolioButton} onClick={backToPortfolio}>
+          <FaGlobe />
+          {t("card.allProjects")}
+        </button>
       </section>
     </main>
   );
