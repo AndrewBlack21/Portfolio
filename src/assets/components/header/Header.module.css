@@ -216,3 +216,27 @@
     display: none;
   }
 }
+
+
+.mobileCardItem {
+  display: none;
+}
+
+.mobileCardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color) !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+  .mobileCardItem {
+    display: block;
+  }
+
+  .mobileCardLink {
+    font-size: 1.5rem !important;
+    padding-top: 0.5rem;
+  }
+}
