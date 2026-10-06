@@ -59,6 +59,16 @@ const Header = ({ theme, toggleTheme }) => {
               Serviço
             </a>
           </li>
+          <li className={styles.mobileCardItem}>
+            <a
+              onClick={toggleMenu}
+              href="#cartao"
+              className={styles.mobileCardLink}
+            >
+              <span aria-hidden="true">▣</span>
+              {t("header.card")}
+            </a>
+          </li>
         </ul>
       </nav>
 
