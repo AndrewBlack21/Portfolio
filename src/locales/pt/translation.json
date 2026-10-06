@@ -27,7 +27,8 @@
     "qrcode_desc": "Gerador de QR Code para links",
     "clock_desc": "Relogio Mundial com temporizador, e cronometro",
     "todo_list_desc": "To Do List simples, para organizar tarefas diarias",
-    "training_desc": "Uma aplicação de treinos femininos, com dicas e treinos personalizados."
+    "training_desc": "Uma aplicação de treinos femininos, com dicas e treinos personalizados.",
+    "secontrola_desc": "Aplicação de controle financeiro pessoal com dashboard, transações, contas, cartões, faturas, investimentos e relatórios, desenvolvida para oferecer uma experiência simples e intuitiva."
   },
   "hero": {
     "greeting": "Olá, eu sou o Andrew Ferreira",
