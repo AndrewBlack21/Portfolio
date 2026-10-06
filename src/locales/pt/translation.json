@@ -4,7 +4,8 @@
     "about": "Sobre",
     "projects": "Projeto",
     "services": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "card": "Cartão Digital"
   },
   "skills": {
     "title": "HABILIDADES",
@@ -50,5 +51,26 @@
   },
   "footer": {
     "developed_by": "Desenvolvido por - Andrew Ferreira"
+  },
+  "card": {
+    "mode": "CARTÃO DIGITAL",
+    "backToPortfolio": "Voltar ao portfólio",
+    "name": "Andrew Ferreira",
+    "role": "Desenvolvedor Front-end",
+    "status": "Disponível para oportunidades",
+    "bio": "Desenvolvedor Front-end focado em criar experiências digitais modernas, responsivas e intuitivas.",
+    "whatsapp": "Falar no WhatsApp",
+    "saveContact": "Salvar contato",
+    "share": "Compartilhar cartão",
+    "qrAlt": "QR Code para abrir meu cartão digital",
+    "scanTitle": "Leve meu contato com você",
+    "scanDescription": "Aponte a câmera para abrir este cartão digital.",
+    "viewPortfolio": "Conhecer portfólio completo",
+    "label": "UMA NOVA FORMA DE SE APRESENTAR",
+    "headline": "Meu trabalho, em dois modos.",
+    "description": "O portfólio continua completo para quem quer conhecer meus projetos. O cartão digital resume minha apresentação profissional para networking, entrevistas e compartilhamento pelo celular.",
+    "feature1": "Perfil profissional em uma única tela",
+    "feature2": "Contato rápido e compartilhável",
+    "feature3": "Acesso direto ao portfólio completo"
   }
 }
