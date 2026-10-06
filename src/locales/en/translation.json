@@ -71,6 +71,11 @@
     "description": "The portfolio remains complete for anyone who wants to explore my projects. The digital card summarizes my professional profile for networking, interviews and mobile sharing.",
     "feature1": "Professional profile in one screen",
     "feature2": "Fast and shareable contact",
-    "feature3": "Direct access to the full portfolio"
+    "feature3": "Direct access to the full portfolio",
+    "projectsLabel": "FEATURED PROJECTS",
+    "projectsTitle": "Some of my work",
+    "projectsDescription": "A selection of projects that showcase different experiences in development, product and user experience.",
+    "projectCta": "View project",
+    "allProjects": "View all projects"
   }
 }
