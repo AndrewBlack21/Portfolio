@@ -188,3 +188,31 @@
   color: var(--text-secondary); /* ADAPTADO: Usa sua cor de texto secundária */
   font-size: 1rem;
 }
+
+
+.cardModeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--accent-color);
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.cardModeButton:hover {
+  transform: translateY(-2px);
+  background: var(--accent-color);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .cardModeButton {
+    display: none;
+  }
+}
