@@ -3,15 +3,13 @@ import styles from "./Header.module.css";
 import sunIcon from "/imagens/sun.png";
 import moonIcon from "/imagens/moon.png";
 import AF from "/imagens/AF.png";
-// Menu Hamburgue
 import HamburgueIcon from "./HamburgueIcon";
 import CloseIcon from "./CloseIcon";
-
-import { useTranslation } from "react-i18next"; // 1. Importe o hook
+import { useTranslation } from "react-i18next";
 
 const Header = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation(); // 2. Use o hook
+  const { t, i18n } = useTranslation();
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -36,6 +34,7 @@ const Header = ({ theme, toggleTheme }) => {
           <img src={AF} className={styles.logoimg} alt="" />
         </a>
       </div>
+
       <nav
         className={`${styles.navbar} ${isMenuOpen ? styles.navbarOpen : ""}`}
       >
@@ -62,10 +61,24 @@ const Header = ({ theme, toggleTheme }) => {
           </li>
         </ul>
       </nav>
+
       <div className={styles.actions}>
-        <a href="https://wa.me/5513981142641" className={styles.contactButton}>
+        <a
+          href="#cartao"
+          className={styles.cardModeButton}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span aria-hidden="true">▣</span>
+          {t("header.card")}
+        </a>
+
+        <a
+          href="https://wa.me/5513981142641"
+          className={styles.contactButton}
+        >
           {t("header.contact")}
         </a>
+
         <button onClick={toggleTheme} className={styles.themeToggleButton}>
           <img
             src={theme === "light" ? moonIcon : sunIcon}
