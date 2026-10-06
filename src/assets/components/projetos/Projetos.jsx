@@ -24,7 +24,7 @@ const ProjetosData = [
   {
     id: 11,
     title: "SeControla Ai",
-    image: "imagens/Projetos/SeControlaAi.png",
+    image: "imagens/Projetos/secontrola.png",
     link: "https://github.com/AndrewBlack21/finance-app",
     repo: "https://github.com/AndrewBlack21/finance-app",
     descriptionKey: "projects.secontrola_desc",
