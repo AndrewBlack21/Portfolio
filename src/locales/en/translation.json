@@ -4,7 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "services": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "card": "Digital Card"
   },
   "hero": {
     "greeting": "Hello, I am Andrew Ferreira",
@@ -50,5 +51,26 @@
     "developmentDescription": "I develop front-ends for professional websites, blogs, SaaS, landing pages, e-commerce, and other websites, with a focus on performance and responsiveness.",
     "designTitle": "UX/UI Design",
     "designDescription": "I design interfaces in Figma in a way that is clear, objective, and above all, intuitive for the user experience, creating a cohesive navigation flow."
+  },
+  "card": {
+    "mode": "DIGITAL CARD",
+    "backToPortfolio": "Back to portfolio",
+    "name": "Andrew Ferreira",
+    "role": "Front-end Developer",
+    "status": "Available for opportunities",
+    "bio": "Front-end Developer focused on creating modern, responsive and intuitive digital experiences.",
+    "whatsapp": "Talk on WhatsApp",
+    "saveContact": "Save contact",
+    "share": "Share card",
+    "qrAlt": "QR Code to open my digital card",
+    "scanTitle": "Take my contact with you",
+    "scanDescription": "Point your camera to open this digital card.",
+    "viewPortfolio": "Explore full portfolio",
+    "label": "A NEW WAY TO PRESENT YOURSELF",
+    "headline": "My work, in two modes.",
+    "description": "The portfolio remains complete for anyone who wants to explore my projects. The digital card summarizes my professional profile for networking, interviews and mobile sharing.",
+    "feature1": "Professional profile in one screen",
+    "feature2": "Fast and shareable contact",
+    "feature3": "Direct access to the full portfolio"
   }
 }
