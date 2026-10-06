@@ -1,0 +1,383 @@
+.page {
+  min-height: 100vh;
+  padding: 28px 5% 48px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(123, 97, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 85% 80%, rgba(123, 97, 255, 0.1), transparent 30%),
+    var(--background);
+  color: var(--text-primary);
+}
+
+.backgroundGlow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: 100px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  opacity: 0.08;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.topbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.backButton,
+.socials button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--header-background);
+  color: var(--text-primary);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  color: var(--accent-color);
+}
+
+.modeBadge,
+.eyebrow {
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+}
+
+.modeBadge {
+  padding: 8px 12px;
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  border-radius: 999px;
+}
+
+.content {
+  width: min(1100px, 100%);
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: minmax(320px, 460px) minmax(280px, 1fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 100px);
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: color-mix(in srgb, var(--header-background) 94%, transparent);
+  border: 1px solid rgba(127, 127, 127, 0.14);
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent-color), #4b36b8);
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(123, 97, 255, 0.28);
+}
+
+.card h1 {
+  margin: 4px 0 2px;
+  font-size: clamp(1.7rem, 4vw, 2.25rem);
+}
+
+.cardHeader p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.bio {
+  margin-top: 18px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 24px;
+}
+
+.skills span {
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: var(--background);
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.primaryActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton,
+.portfolioLink {
+  min-height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(123, 97, 255, 0.22);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(127, 127, 127, 0.2);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.portfolioLink:hover {
+  transform: translateY(-2px);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.socials a,
+.socials button {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  color: var(--text-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover,
+.socials button:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.qrArea {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--background);
+}
+
+.qr {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 5px;
+}
+
+.qrArea strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.qrArea p {
+  color: var(--text-secondary);
+  line-height: 1.45;
+  font-size: 0.78rem;
+}
+
+.portfolioLink {
+  width: 100%;
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.sideInfo {
+  max-width: 520px;
+}
+
+.sideInfo > span {
+  color: var(--accent-color);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+}
+
+.sideInfo h2 {
+  margin: 14px 0 18px;
+  font-size: clamp(2.3rem, 5vw, 4.7rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.sideInfo > p {
+  max-width: 480px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.featureList {
+  margin-top: 34px;
+  display: grid;
+  gap: 12px;
+}
+
+.featureList div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.14);
+}
+
+.featureList strong {
+  color: var(--accent-color);
+  font-size: 0.78rem;
+}
+
+.featureList span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 820px) {
+  .page {
+    padding: 18px 18px 36px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+    gap: 34px;
+  }
+
+  .sideInfo {
+    order: -1;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .sideInfo > p {
+    margin: 0 auto;
+  }
+
+  .featureList {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .modeBadge {
+    font-size: 0.65rem;
+    padding: 7px 9px;
+  }
+
+  .backButton span {
+    display: none;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .cardHeader {
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+    border-radius: 18px;
+  }
+
+  .primaryActions {
+    grid-template-columns: 1fr;
+  }
+
+  .qrArea {
+    align-items: flex-start;
+  }
+
+  .qr {
+    width: 76px;
+    height: 76px;
+  }
+}
