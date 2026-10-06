@@ -39,7 +39,8 @@
     "qrcode_desc": "A QR Code generator for links.",
     "clock_desc": "A World Clock with a timer and stopwatch.",
     "todo_list_desc": "A simple To-Do List to organize daily tasks.",
-    "training_desc": "An application for female workouts, with tips and personalized training."
+    "training_desc": "An application for female workouts, with tips and personalized training.",
+    "secontrola_desc": "Personal finance management application with dashboard, transactions, accounts, cards, invoices, investments and reports, designed for a simple and intuitive experience."
   },
   "footer": {
     "developed_by": "Developed by - Andrew Ferreira"
