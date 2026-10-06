@@ -71,6 +71,11 @@
     "description": "O portfólio continua completo para quem quer conhecer meus projetos. O cartão digital resume minha apresentação profissional para networking, entrevistas e compartilhamento pelo celular.",
     "feature1": "Perfil profissional em uma única tela",
     "feature2": "Contato rápido e compartilhável",
-    "feature3": "Acesso direto ao portfólio completo"
+    "feature3": "Acesso direto ao portfólio completo",
+    "projectsLabel": "PROJETOS EM DESTAQUE",
+    "projectsTitle": "Alguns dos meus trabalhos",
+    "projectsDescription": "Uma seleção de projetos que mostram diferentes experiências em desenvolvimento, produto e experiência do usuário.",
+    "projectCta": "Ver projeto",
+    "allProjects": "Ver todos os projetos"
   }
 }
