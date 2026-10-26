@@ -41,7 +41,14 @@
     "clock_desc": "A World Clock with a timer and stopwatch.",
     "todo_list_desc": "A simple To-Do List to organize daily tasks.",
     "training_desc": "An application for female workouts, with tips and personalized training.",
-    "secontrola_desc": "Personal finance management application with dashboard, transactions, accounts, cards, invoices, investments and reports, designed for a simple and intuitive experience."
+    "secontrola_desc": "Personal finance management application with dashboard, transactions, accounts, cards, invoices, investments and reports, designed for a simple and intuitive experience.",
+    "filterLabel": "Filter projects by type",
+    "applications": "Applications",
+    "landingPages": "Landing Pages",
+    "virtualCardEyebrow": "ALSO AVAILABLE",
+    "virtualCardTitle": "My virtual business card",
+    "virtualCardDescription": "A compact version of my professional profile with contact details, links and featured projects — ideal for sharing on mobile.",
+    "virtualCardButton": "Open virtual card"
   },
   "footer": {
     "developed_by": "Developed by - Andrew Ferreira"
