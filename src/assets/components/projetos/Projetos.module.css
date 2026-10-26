@@ -348,3 +348,98 @@
     display: none;
   }
 }
+
+
+/* ===== FILTROS POR TIPO DE PROJETO ===== */
+.categoryFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 auto 0.5rem;
+  padding: 0 1rem;
+}
+.filterButton {
+  border: 1px solid var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.filterButton:hover, .filterActive {
+  color: #fff;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.virtualCardPromo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 980px;
+  margin: 2.5rem auto 0;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+  border-radius: 18px;
+  background: var(--header-background);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+}
+.virtualCardIcon {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 15px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 13%, transparent);
+  font-size: 1.5rem;
+}
+.virtualCardCopy { flex: 1; }
+.virtualCardCopy > span {
+  color: var(--accent-color);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.virtualCardCopy h3 {
+  margin: 0.25rem 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+.virtualCardCopy p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.virtualCardButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.virtualCardButton:hover { transform: translateY(-2px); filter: brightness(1.08); }
+@media (max-width: 650px) {
+  .virtualCardPromo {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 2rem 1rem 0;
+    padding: 1.25rem;
+  }
+  .virtualCardCopy { flex-basis: calc(100% - 75px); }
+  .virtualCardButton { width: 100%; }
+}
