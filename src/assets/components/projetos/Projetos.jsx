@@ -193,6 +193,7 @@ export default function Projetos() {
 
       <div className={styles.swiperWrapper}>
         <Swiper
+          key={activeCategory}
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
