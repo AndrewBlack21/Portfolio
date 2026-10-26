@@ -23,6 +23,7 @@ import styles from "./Projetos.module.css";
 const ProjetosData = [
   {
     id: 11,
+    category: "application",
     title: "SeControla Ai",
     image: "imagens/Projetos/secontrola.png",
     link: "https://github.com/AndrewBlack21/finance-app",
@@ -38,6 +39,7 @@ const ProjetosData = [
   },
   {
     id: 10,
+    category: "application",
     title: "MedWay",
     image: "imagens/Projetos/MedWay.jpeg",
     link: "https://github.com/AndrewBlack21/MedWay",
@@ -54,6 +56,7 @@ const ProjetosData = [
   },
   {
     id: 9,
+    category: "landing",
     title: "FinAI Landing Page",
     image: "imagens/Projetos/FinAI.png",
     link: "https://andrewblack21.github.io/finai-landing/",
@@ -68,6 +71,7 @@ const ProjetosData = [
   },
   {
     id: 1,
+    category: "application",
     image: "imagens/Projetos/DockTaskBar.png",
     title: "Dock TaskBar",
     descriptionKey: "projects.dock_taskbar_desc",
@@ -77,6 +81,7 @@ const ProjetosData = [
   },
   {
     id: 2,
+    category: "application",
     image: "imagens/Projetos/iphocell.png",
     title: "E-commerce Iphocell",
     descriptionKey: "projects.iphocell_desc",
@@ -90,6 +95,7 @@ const ProjetosData = [
   },
   {
     id: 3,
+    category: "landing",
     image: "imagens/Projetos/InstitutoPIB.png",
     title: "Instituto PIB VP",
     descriptionKey: "projects.pib_vp_desc",
@@ -99,6 +105,7 @@ const ProjetosData = [
   },
   {
     id: 4,
+    category: "application",
     image: "imagens/Projetos/InstitutoSina.png",
     title: "Instituto Sina Azul",
     descriptionKey: "projects.sina_azul_desc",
@@ -112,6 +119,7 @@ const ProjetosData = [
   },
   {
     id: 5,
+    category: "application",
     title: "Gerador de QR Code",
     image: "imagens/Projetos/generate-qr-code.png",
     link: "https://andrewblack21.github.io/Gerador-de-QRCode/",
@@ -121,6 +129,7 @@ const ProjetosData = [
   },
   {
     id: 6,
+    category: "application",
     title: "Relógio Mundial",
     image: "imagens/Projetos/relogio mundial.png",
     link: "https://andrewblack21.github.io/Projeto-Relogio-Digital-Temporizador-Cron-metro/",
@@ -130,6 +139,7 @@ const ProjetosData = [
   },
   {
     id: 7,
+    category: "application",
     title: "To Do List",
     image: "imagens/Projetos/to-do-list.png",
     link: "https://andrewblack21.github.io/To-Do-List-projeto/",
@@ -139,6 +149,7 @@ const ProjetosData = [
   },
   {
     id: 8,
+    category: "application",
     title: "Projeto Treino Feminino",
     image: "imagens/Projetos/projeto treino.png",
     link: "https://andrewblack21.github.io/Projeto-de_treino/",
@@ -151,12 +162,33 @@ const ProjetosData = [
 export default function Projetos() {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("application");
+  const visibleProjects = ProjetosData.filter((project) => project.category === activeCategory);
 
   return (
     <section id="projetos" className={styles.section}>
       <div className={styles.header}>
         <span className={styles.label}>PORTFÓLIO</span>
         <h2 className={styles.title}>{t("projects.title")}</h2>
+      </div>
+
+      <div className={styles.categoryFilters} role="group" aria-label={t("projects.filterLabel")}>
+        <button
+          type="button"
+          className={`${styles.filterButton} ${activeCategory === "application" ? styles.filterActive : ""}`}
+          onClick={() => { setActiveCategory("application"); setActiveIndex(0); }}
+          aria-pressed={activeCategory === "application"}
+        >
+          {t("projects.applications")}
+        </button>
+        <button
+          type="button"
+          className={`${styles.filterButton} ${activeCategory === "landing" ? styles.filterActive : ""}`}
+          onClick={() => { setActiveCategory("landing"); setActiveIndex(0); }}
+          aria-pressed={activeCategory === "landing"}
+        >
+          {t("projects.landingPages")}
+        </button>
       </div>
 
       <div className={styles.swiperWrapper}>
@@ -180,7 +212,7 @@ export default function Projetos() {
           modules={[EffectCoverflow, Navigation]}
           className={styles.swiper}
         >
-          {ProjetosData.map((proj, index) => (
+          {visibleProjects.map((proj) => (
             <SwiperSlide key={proj.id} className={styles.slide}>
               <div className={styles.card}>
                 {/* Imagem de fundo */}
@@ -254,12 +286,24 @@ export default function Projetos() {
 
       {/* Dots de paginação */}
       <div className={styles.dots}>
-        {ProjetosData.map((_, i) => (
+        {visibleProjects.map((_, i) => (
           <span
             key={i}
             className={`${styles.dot} ${i === activeIndex ? styles.dotActive : ""}`}
           />
         ))}
+      </div>
+
+      <div className={styles.virtualCardPromo}>
+        <div className={styles.virtualCardIcon}><FaIdCard /></div>
+        <div className={styles.virtualCardCopy}>
+          <span>{t("projects.virtualCardEyebrow")}</span>
+          <h3>{t("projects.virtualCardTitle")}</h3>
+          <p>{t("projects.virtualCardDescription")}</p>
+        </div>
+        <a href="#cartao" className={styles.virtualCardButton}>
+          {t("projects.virtualCardButton")} <FaExternalLinkAlt />
+        </a>
       </div>
     </section>
   );
