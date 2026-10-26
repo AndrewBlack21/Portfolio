@@ -29,7 +29,14 @@
     "clock_desc": "Relogio Mundial com temporizador, e cronometro",
     "todo_list_desc": "To Do List simples, para organizar tarefas diarias",
     "training_desc": "Uma aplicação de treinos femininos, com dicas e treinos personalizados.",
-    "secontrola_desc": "Aplicação de controle financeiro pessoal com dashboard, transações, contas, cartões, faturas, investimentos e relatórios, desenvolvida para oferecer uma experiência simples e intuitiva."
+    "secontrola_desc": "Aplicação de controle financeiro pessoal com dashboard, transações, contas, cartões, faturas, investimentos e relatórios, desenvolvida para oferecer uma experiência simples e intuitiva.",
+    "filterLabel": "Filtrar projetos por tipo",
+    "applications": "Aplicações",
+    "landingPages": "Landing Pages",
+    "virtualCardEyebrow": "TAMBÉM DISPONÍVEL",
+    "virtualCardTitle": "Meu cartão virtual",
+    "virtualCardDescription": "Uma versão compacta do meu perfil profissional, com contatos, links e projetos em destaque — ideal para compartilhar pelo celular.",
+    "virtualCardButton": "Abrir cartão virtual"
   },
   "hero": {
     "greeting": "Olá, eu sou o Andrew Ferreira",
