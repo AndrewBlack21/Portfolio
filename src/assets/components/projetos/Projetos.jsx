@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectCoverflow, Autoplay } from "swiper/modules";
 import {
+  FaIdCard,
   FaReact,
   FaHtml5,
   FaCss3Alt,
