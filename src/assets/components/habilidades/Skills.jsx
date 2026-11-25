@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Skills.module.css";
 import { useTranslation } from "react-i18next";
 
@@ -6,125 +6,128 @@ const skillGroups = [
   {
     id: "frontend",
     titleKey: "skills.categories.frontend",
+    descriptionKey: "skills.categoryDescriptions.frontend",
+    featured: true,
     skills: [
-      { name: "React", icon: "imagens/habilidades/react.png", description: "Desenvolvimento de interfaces com componentes reutilizáveis, hooks e aplicações modernas." },
-      { name: "JavaScript", icon: "imagens/habilidades/javascript.png", description: "Linguagem para criar interações, regras de negócio e funcionalidades dinâmicas na web." },
-      { name: "HTML5", icon: "imagens/habilidades/html.png", description: "Estruturação semântica de páginas, com atenção à acessibilidade e organização do conteúdo." },
-      { name: "CSS3", icon: "imagens/habilidades/css.png", description: "Estilização de interfaces responsivas com Flexbox, Grid e recursos modernos de CSS." },
-      { name: "TypeScript", short: "TS", description: "JavaScript com tipagem estática para desenvolver aplicações mais previsíveis e fáceis de manter." },
-      { name: "Next.js", short: "N", description: "Framework React para aplicações web com recursos de renderização e roteamento." },
-      { name: "React Native", short: "RN", description: "Desenvolvimento de aplicações mobile utilizando React e componentes nativos." },
-      { name: "Bootstrap", icon: "imagens/habilidades/bootstrap.png", description: "Framework CSS para construir layouts responsivos com componentes prontos." },
-      { name: "Tailwind CSS", short: "TW", description: "Framework CSS utility-first para construir interfaces diretamente com classes utilitárias." }
+      { name: "React", icon: "imagens/habilidades/react.png" },
+      { name: "JavaScript", icon: "imagens/habilidades/javascript.png" },
+      { name: "HTML5", icon: "imagens/habilidades/html.png" },
+      { name: "CSS3", icon: "imagens/habilidades/css.png" },
+      { name: "TypeScript", short: "TS" },
+      { name: "Next.js", short: "N" },
+      { name: "React Native", short: "RN" },
+      { name: "Bootstrap", icon: "imagens/habilidades/bootstrap.png" },
+      { name: "Tailwind CSS", short: "TW" }
     ]
   },
   {
     id: "backend",
     titleKey: "skills.categories.backend",
+    descriptionKey: "skills.categoryDescriptions.backend",
     skills: [
-      { name: "Python", icon: "imagens/habilidades/python.png", description: "Linguagem versátil utilizada em automações, lógica de aplicação e desenvolvimento back-end." },
-      { name: "Node.js", short: "JS", description: "Ambiente de execução JavaScript para desenvolver serviços e aplicações no servidor." },
-      { name: "APIs REST", short: "API", description: "Integração entre aplicações por meio de endpoints HTTP e troca estruturada de dados." }
+      { name: "Python", icon: "imagens/habilidades/python.png" },
+      { name: "Node.js", short: "JS" },
+      { name: "APIs REST", short: "API" }
     ]
   },
   {
     id: "database",
     titleKey: "skills.categories.database",
+    descriptionKey: "skills.categoryDescriptions.database",
     skills: [
-      { name: "PostgreSQL", short: "PG", description: "Banco de dados relacional para armazenar e consultar dados com SQL." },
-      { name: "Firebase", short: "FB", description: "Plataforma com serviços de autenticação, banco de dados e infraestrutura para aplicações." },
-      { name: "Supabase", short: "SB", description: "Plataforma baseada em PostgreSQL com recursos de banco, autenticação e armazenamento." }
+      { name: "PostgreSQL", short: "PG" },
+      { name: "Firebase", short: "FB" },
+      { name: "Supabase", short: "SB" }
     ]
   },
   {
     id: "tools",
     titleKey: "skills.categories.tools",
+    descriptionKey: "skills.categoryDescriptions.tools",
     skills: [
-      { name: "Git", icon: "imagens/github.png", description: "Controle de versão para acompanhar alterações e organizar o desenvolvimento." },
-      { name: "GitHub", short: "GH", description: "Hospedagem de repositórios e colaboração por meio de branches, commits e pull requests." },
-      { name: "Docker", short: "DK", description: "Containerização para padronizar ambientes e facilitar a execução de aplicações." },
-      { name: "Figma", icon: "imagens/habilidades/figma.png", description: "Criação e consulta de layouts, protótipos e referências de interface." },
-      { name: "npm", short: "npm", description: "Gerenciamento de dependências e scripts de projetos JavaScript." }
+      { name: "Git", icon: "imagens/github.png" },
+      { name: "GitHub", short: "GH" },
+      { name: "Docker", short: "DK" },
+      { name: "Figma", icon: "imagens/habilidades/figma.png" },
+      { name: "npm", short: "npm" }
     ]
   },
   {
     id: "ai",
     titleKey: "skills.categories.ai",
+    descriptionKey: "skills.categoryDescriptions.ai",
     skills: [
-      { name: "Inteligência Artificial", short: "IA", description: "Uso de ferramentas de IA como apoio à pesquisa, produtividade, prototipação e desenvolvimento." }
+      { name: "Inteligência Artificial", short: "IA" }
     ]
   }
 ];
 
 const Skills = () => {
-  const [activeSkill, setActiveSkill] = useState(null);
   const { t } = useTranslation();
+  const totalSkills = skillGroups.reduce((total, group) => total + group.skills.length, 0);
 
   return (
     <section id="habilidades" className={styles.skills}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <span className={styles.eyebrow}>{t("skills.eyebrow")}</span>
-          <h2 className={styles.title}>{t("skills.title")}</h2>
-          <p className={styles.subtitle}>{t("skills.subtitle")}</p>
-        </header>
-
-        <div className={styles.content}>
-          <div className={styles.groups}>
-            {skillGroups.map((group) => (
-              <section className={styles.group} key={group.id} aria-labelledby={`skills-${group.id}`}>
-                <h3 className={styles.groupTitle} id={`skills-${group.id}`}>
-                  {t(group.titleKey)}
-                  <span>{group.skills.length.toString().padStart(2, "0")}</span>
-                </h3>
-                <div className={styles.skillList}>
-                  {group.skills.map((skill) => {
-                    const selected = activeSkill?.name === skill.name;
-                    return (
-                      <button
-                        type="button"
-                        key={skill.name}
-                        className={`${styles.skillCard} ${selected ? styles.active : ""}`}
-                        onMouseEnter={() => setActiveSkill(skill)}
-                        onFocus={() => setActiveSkill(skill)}
-                        onClick={() => setActiveSkill(skill)}
-                        aria-pressed={selected}
-                      >
-                        <span className={styles.skillIcon}>
-                          {skill.icon ? (
-                            <img src={skill.icon} alt="" />
-                          ) : (
-                            <span>{skill.short}</span>
-                          )}
-                        </span>
-                        <span className={styles.skillName}>{skill.name}</span>
-                        <span className={styles.cardArrow} aria-hidden="true">↗</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
-            ))}
+          <div className={styles.headingContent}>
+            <span className={styles.eyebrow}>
+              <span className={styles.eyebrowDot} />
+              {t("skills.eyebrow")}
+            </span>
+            <h2 className={styles.title}>{t("skills.title")}</h2>
+            <p className={styles.subtitle}>{t("skills.subtitle")}</p>
           </div>
 
-          <aside className={styles.details} aria-live="polite">
-            <span className={styles.detailsLabel}>{t("skills.detailsLabel")}</span>
-            {activeSkill ? (
-              <>
-                <span className={styles.detailsIcon}>
-                  {activeSkill.short || activeSkill.name.slice(0, 2).toUpperCase()}
+          <div className={styles.overview} aria-label={t("skills.overviewLabel")}>
+            <div className={styles.overviewNumber}>
+              <strong>{String(totalSkills).padStart(2, "0")}</strong>
+              <span>{t("skills.technologiesLabel")}</span>
+            </div>
+            <span className={styles.overviewDivider} />
+            <div className={styles.overviewNumber}>
+              <strong>{String(skillGroups.length).padStart(2, "0")}</strong>
+              <span>{t("skills.areasLabel")}</span>
+            </div>
+          </div>
+        </header>
+
+        <div className={styles.groups}>
+          {skillGroups.map((group, index) => (
+            <article
+              className={`${styles.groupCard} ${group.featured ? styles.featured : ""}`}
+              key={group.id}
+              style={{ "--card-index": index }}
+            >
+              <div className={styles.groupHeader}>
+                <div className={styles.groupHeading}>
+                  <span className={styles.groupIndex}>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className={styles.groupTitle}>{t(group.titleKey)}</h3>
+                    <p className={styles.groupDescription}>{t(group.descriptionKey)}</p>
+                  </div>
+                </div>
+                <span className={styles.groupCount}>
+                  {String(group.skills.length).padStart(2, "0")}
                 </span>
-                <h3>{activeSkill.name}</h3>
-                <p>{activeSkill.description}</p>
-              </>
-            ) : (
-              <>
-                <span className={styles.detailsIcon}>{"</>"}</span>
-                <h3>{t("skills.selectTitle")}</h3>
-                <p>{t("skills.selectDescription")}</p>
-              </>
-            )}
-          </aside>
+              </div>
+
+              <div className={styles.skillList}>
+                {group.skills.map((skill) => (
+                  <div className={styles.skillItem} key={skill.name}>
+                    <span className={styles.skillIcon}>
+                      {skill.icon ? (
+                        <img src={skill.icon} alt="" loading="lazy" />
+                      ) : (
+                        <span>{skill.short}</span>
+                      )}
+                    </span>
+                    <span className={styles.skillName}>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
