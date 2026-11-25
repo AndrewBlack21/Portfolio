@@ -34,11 +34,11 @@ const featuredProjects = [
     link: "https://github.com/AndrewBlack21/finance-app",
   },
   {
-    title: "FinAI Landing Page",
-    image: "./imagens/Projetos/FinAI.png",
+    title: "Can Catalago",
+    image: "./imagens/Projetos/Can-catalog.png",
     description:
-      "Landing page de um conceito de aplicativo financeiro com IA, focada em conversão.",
-    link: "https://andrewblack21.github.io/finai-landing/",
+      "Uma pagina focada na venda de produtos utilizando um catalago com sincronia com o inifinitypay",
+    link: "www.cangroup.com.br",
   },
 ];
 
