@@ -90,9 +90,9 @@ const Skills = () => {
               <div className={styles.artCore}>
                 <span>{"</>"}</span>
               </div>
-              <span className={styles.artNode artNodeOne}>JS</span>
-              <span className={styles.artNode artNodeTwo}>AI</span>
-              <span className={styles.artNode artNodeThree}>UI</span>
+              <span className={`${styles.artNode} ${styles.artNodeOne}`}>JS</span>
+              <span className={`${styles.artNode} ${styles.artNodeTwo}`}>AI</span>
+              <span className={`${styles.artNode} ${styles.artNodeThree}`}>UI</span>
             </div>
           </div>
 
