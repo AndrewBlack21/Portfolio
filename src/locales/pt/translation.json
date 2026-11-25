@@ -39,7 +39,15 @@
       "database": "Armazenamento, consulta e gestão de dados.",
       "tools": "Fluxo de desenvolvimento, design e ambiente.",
       "ai": "Ferramentas inteligentes como apoio ao desenvolvimento."
-    }
+    },
+    "heroLineOne": "Tecnologia que transforma",
+    "heroLineTwo": "ideias em experiências.",
+    "heroFootnote": "Conhecimento aplicado em projetos reais e estudos contínuos.",
+    "stackLabel": "MEU ECOSSISTEMA",
+    "organizedTitle": "Ferramentas para construir soluções",
+    "organizedDescription": "Uma visão organizada das tecnologias que fazem parte da minha jornada em desenvolvimento.",
+    "itemsLabel": "ITENS",
+    "footerNote": "Minha stack está em constante evolução: estudo, testo e aplico novas ferramentas conforme os desafios de cada projeto."
   },
   "projects": {
     "title": "Meus Projetos",
