@@ -69,54 +69,75 @@ const Skills = () => {
     <section id="habilidades" className={styles.skills}>
       <div className={styles.container}>
         <header className={styles.hero}>
-          <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>
-              <span className={styles.eyebrowLine} />
-              {t("skills.eyebrow")}
-            </span>
-            <h2 className={styles.title}>{t("skills.title")}</h2>
-            <p className={styles.subtitle}>{t("skills.subtitle")}</p>
+          <div className={styles.heroTopline}>
+            <span className={styles.eyebrow}>{t("skills.eyebrow")}</span>
+            <span className={styles.heroIndex}>01 — 05 / TOOLKIT</span>
           </div>
 
-          <div className={styles.heroVisual} aria-hidden="true">
-            <span className={styles.visualOrb} />
-            <span className={styles.visualOrbit} />
-            <span className={styles.visualCode}>{"</>"}</span>
-            <span className={styles.visualCaption}>DESIGN · BUILD · CREATE</span>
+          <div className={styles.heroMain}>
+            <div className={styles.heroCopy}>
+              <h2 className={styles.title}>
+                {t("skills.heroLineOne")}<br />
+                <span>{t("skills.heroLineTwo")}</span>
+              </h2>
+              <p className={styles.subtitle}>{t("skills.subtitle")}</p>
+            </div>
+
+            <div className={styles.heroArt} aria-hidden="true">
+              <div className={styles.artGlow} />
+              <div className={styles.artRing artRingOne} />
+              <div className={styles.artRing artRingTwo} />
+              <div className={styles.artCore}>
+                <span>{"</>"}</span>
+              </div>
+              <span className={styles.artNode artNodeOne}>JS</span>
+              <span className={styles.artNode artNodeTwo}>AI</span>
+              <span className={styles.artNode artNodeThree}>UI</span>
+            </div>
+          </div>
+
+          <div className={styles.heroBottom}>
+            <span>{t("skills.heroFootnote")}</span>
+            <div className={styles.stats}>
+              <div><strong>{String(totalSkills).padStart(2, "0")}</strong><span>{t("skills.technologiesLabel")}</span></div>
+              <i />
+              <div><strong>05</strong><span>{t("skills.areasLabel")}</span></div>
+            </div>
           </div>
         </header>
 
-        <div className={styles.sectionMeta}>
-          <span>{t("skills.stackLabel")}</span>
-          <span className={styles.metaCount}>
-            <strong>{String(totalSkills).padStart(2, "0")}</strong>
-            {t("skills.technologiesLabel")}
-          </span>
+        <div className={styles.sectionHeading}>
+          <div>
+            <span className={styles.sectionEyebrow}>{t("skills.stackLabel")}</span>
+            <h3>{t("skills.organizedTitle")}</h3>
+          </div>
+          <p>{t("skills.organizedDescription")}</p>
         </div>
 
-        <div className={styles.groups}>
+        <div className={styles.skillGrid}>
           {skillGroups.map((group, index) => (
-            <article className={`${styles.groupRow} ${index === 0 ? styles.primaryGroup : ""}`} key={group.id}>
-              <div className={styles.groupInfo}>
-                <span className={styles.groupIndex}>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 className={styles.groupTitle}>{t(group.titleKey)}</h3>
-                  <p className={styles.groupDescription}>{t(group.descriptionKey)}</p>
-                </div>
+            <article
+              className={`${styles.category} ${index === 0 ? styles.categoryFeatured : ""} ${group.id === "ai" ? styles.categoryAi : ""}`}
+              key={group.id}
+            >
+              <div className={styles.categoryTop}>
+                <span className={styles.categoryNumber}>0{index + 1}</span>
+                <span className={styles.categoryCount}>{String(group.skills.length).padStart(2, "0")} {t("skills.itemsLabel")}</span>
+              </div>
+
+              <div className={styles.categoryHeading}>
+                <h4>{t(group.titleKey)}</h4>
+                <p>{t(group.descriptionKey)}</p>
               </div>
 
               <div className={styles.skillList}>
                 {group.skills.map((skill) => (
-                  <span className={styles.skill} key={skill.name}>
-                    <span className={styles.skillMark}>
-                      {skill.icon ? (
-                        <img src={skill.icon} alt="" loading="lazy" />
-                      ) : (
-                        skill.short
-                      )}
+                  <div className={styles.skill} key={skill.name}>
+                    <span className={styles.skillIcon}>
+                      {skill.icon ? <img src={skill.icon} alt="" loading="lazy" /> : <span>{skill.short}</span>}
                     </span>
-                    <span>{skill.name}</span>
-                  </span>
+                    <span className={styles.skillName}>{skill.name}</span>
+                  </div>
                 ))}
               </div>
             </article>
@@ -124,7 +145,7 @@ const Skills = () => {
         </div>
 
         <footer className={styles.footerNote}>
-          <span className={styles.footerSparkle}>✳</span>
+          <span className={styles.footerMark}>✳</span>
           <p>{t("skills.footerNote")}</p>
         </footer>
       </div>
