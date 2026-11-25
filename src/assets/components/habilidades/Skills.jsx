@@ -85,8 +85,8 @@ const Skills = () => {
 
             <div className={styles.heroArt} aria-hidden="true">
               <div className={styles.artGlow} />
-              <div className={styles.artRing artRingOne} />
-              <div className={styles.artRing artRingTwo} />
+              <div className={`${styles.artRing} ${styles.artRingOne}`} />
+              <div className={`${styles.artRing} ${styles.artRingTwo}`} />
               <div className={styles.artCore}>
                 <span>{"</>"}</span>
               </div>
