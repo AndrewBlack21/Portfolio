@@ -51,7 +51,15 @@
       "database": "Data storage, querying and management.",
       "tools": "Development workflow, design and environment.",
       "ai": "Intelligent tools supporting the development process."
-    }
+    },
+    "heroLineOne": "Technology that turns",
+    "heroLineTwo": "ideas into experiences.",
+    "heroFootnote": "Knowledge applied to real projects and continuous learning.",
+    "stackLabel": "MY ECOSYSTEM",
+    "organizedTitle": "Tools to build solutions",
+    "organizedDescription": "A structured overview of the technologies that are part of my development journey.",
+    "itemsLabel": "ITEMS",
+    "footerNote": "My toolkit keeps evolving: I study, test and apply new tools as each project brings new challenges."
   },
   "projects": {
     "title": "My Projects",
