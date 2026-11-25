@@ -7,7 +7,6 @@ const skillGroups = [
     id: "frontend",
     titleKey: "skills.categories.frontend",
     descriptionKey: "skills.categoryDescriptions.frontend",
-    featured: true,
     skills: [
       { name: "React", icon: "imagens/habilidades/react.png" },
       { name: "JavaScript", icon: "imagens/habilidades/javascript.png" },
@@ -57,7 +56,7 @@ const skillGroups = [
     titleKey: "skills.categories.ai",
     descriptionKey: "skills.categoryDescriptions.ai",
     skills: [
-      { name: "Inteligência Artificial", short: "IA" }
+      { name: "Inteligência Artificial", short: "AI" }
     ]
   }
 ];
@@ -69,66 +68,65 @@ const Skills = () => {
   return (
     <section id="habilidades" className={styles.skills}>
       <div className={styles.container}>
-        <header className={styles.header}>
-          <div className={styles.headingContent}>
+        <header className={styles.hero}>
+          <div className={styles.heroCopy}>
             <span className={styles.eyebrow}>
-              <span className={styles.eyebrowDot} />
+              <span className={styles.eyebrowLine} />
               {t("skills.eyebrow")}
             </span>
             <h2 className={styles.title}>{t("skills.title")}</h2>
             <p className={styles.subtitle}>{t("skills.subtitle")}</p>
           </div>
 
-          <div className={styles.overview} aria-label={t("skills.overviewLabel")}>
-            <div className={styles.overviewNumber}>
-              <strong>{String(totalSkills).padStart(2, "0")}</strong>
-              <span>{t("skills.technologiesLabel")}</span>
-            </div>
-            <span className={styles.overviewDivider} />
-            <div className={styles.overviewNumber}>
-              <strong>{String(skillGroups.length).padStart(2, "0")}</strong>
-              <span>{t("skills.areasLabel")}</span>
-            </div>
+          <div className={styles.heroVisual} aria-hidden="true">
+            <span className={styles.visualOrb} />
+            <span className={styles.visualOrbit} />
+            <span className={styles.visualCode}>{"</>"}</span>
+            <span className={styles.visualCaption}>DESIGN · BUILD · CREATE</span>
           </div>
         </header>
 
+        <div className={styles.sectionMeta}>
+          <span>{t("skills.stackLabel")}</span>
+          <span className={styles.metaCount}>
+            <strong>{String(totalSkills).padStart(2, "0")}</strong>
+            {t("skills.technologiesLabel")}
+          </span>
+        </div>
+
         <div className={styles.groups}>
           {skillGroups.map((group, index) => (
-            <article
-              className={`${styles.groupCard} ${group.featured ? styles.featured : ""}`}
-              key={group.id}
-              style={{ "--card-index": index }}
-            >
-              <div className={styles.groupHeader}>
-                <div className={styles.groupHeading}>
-                  <span className={styles.groupIndex}>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h3 className={styles.groupTitle}>{t(group.titleKey)}</h3>
-                    <p className={styles.groupDescription}>{t(group.descriptionKey)}</p>
-                  </div>
+            <article className={`${styles.groupRow} ${index === 0 ? styles.primaryGroup : ""}`} key={group.id}>
+              <div className={styles.groupInfo}>
+                <span className={styles.groupIndex}>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3 className={styles.groupTitle}>{t(group.titleKey)}</h3>
+                  <p className={styles.groupDescription}>{t(group.descriptionKey)}</p>
                 </div>
-                <span className={styles.groupCount}>
-                  {String(group.skills.length).padStart(2, "0")}
-                </span>
               </div>
 
               <div className={styles.skillList}>
                 {group.skills.map((skill) => (
-                  <div className={styles.skillItem} key={skill.name}>
-                    <span className={styles.skillIcon}>
+                  <span className={styles.skill} key={skill.name}>
+                    <span className={styles.skillMark}>
                       {skill.icon ? (
                         <img src={skill.icon} alt="" loading="lazy" />
                       ) : (
-                        <span>{skill.short}</span>
+                        skill.short
                       )}
                     </span>
-                    <span className={styles.skillName}>{skill.name}</span>
-                  </div>
+                    <span>{skill.name}</span>
+                  </span>
                 ))}
               </div>
             </article>
           ))}
         </div>
+
+        <footer className={styles.footerNote}>
+          <span className={styles.footerSparkle}>✳</span>
+          <p>{t("skills.footerNote")}</p>
+        </footer>
       </div>
     </section>
   );
