@@ -41,6 +41,16 @@
       "database": "Databases",
       "tools": "Tools and technologies",
       "ai": "Artificial Intelligence"
+    },
+    "overviewLabel": "Skills overview",
+    "technologiesLabel": "technologies",
+    "areasLabel": "areas",
+    "categoryDescriptions": {
+      "frontend": "Web interfaces and mobile experiences.",
+      "backend": "Application logic, services and integrations.",
+      "database": "Data storage, querying and management.",
+      "tools": "Development workflow, design and environment.",
+      "ai": "Intelligent tools supporting the development process."
     }
   },
   "projects": {
