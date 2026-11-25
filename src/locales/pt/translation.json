@@ -29,6 +29,16 @@
       "database": "Banco de dados",
       "tools": "Ferramentas e tecnologias",
       "ai": "Inteligência Artificial"
+    },
+    "overviewLabel": "Visão geral das habilidades",
+    "technologiesLabel": "tecnologias",
+    "areasLabel": "áreas",
+    "categoryDescriptions": {
+      "frontend": "Interfaces web e experiências mobile.",
+      "backend": "Lógica de aplicação, serviços e integrações.",
+      "database": "Armazenamento, consulta e gestão de dados.",
+      "tools": "Fluxo de desenvolvimento, design e ambiente.",
+      "ai": "Ferramentas inteligentes como apoio ao desenvolvimento."
     }
   },
   "projects": {
