@@ -1,116 +1,153 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Skills.module.css";
 import { useTranslation } from "react-i18next";
 
-// --- DADOS DAS HABILIDADES ---
-// Variavel como lista para estar passando as habilidades que quero incrementar, posso adicionar quantas eu quiser
-const skillsData = [
+const skillGroups = [
   {
-    id: 1,
-    name: "React",
-    icon: "imagens/habilidades/react.png",
-    description:
-      "Crio interfaces de usuário dinâmicas e reativas, utilizando componentes, hooks e o ecossistema moderno do React para construir SPAs (Single Page Applications) de alta performance.",
+    id: "frontend",
+    titleKey: "skills.categories.frontend",
+    descriptionKey: "skills.categoryDescriptions.frontend",
+    skills: [
+      { name: "React", icon: "imagens/habilidades/react.png" },
+      { name: "JavaScript", icon: "imagens/habilidades/javascript.png" },
+      { name: "HTML5", icon: "imagens/habilidades/html.png" },
+      { name: "CSS3", icon: "imagens/habilidades/css.png" },
+      { name: "TypeScript", short: "TS" },
+      { name: "Next.js", short: "N" },
+      { name: "React Native", short: "RN" },
+      { name: "Bootstrap", icon: "imagens/habilidades/bootstrap.png" },
+      { name: "Tailwind CSS", short: "TW" }
+    ]
   },
   {
-    id: 2,
-    name: "JavaScript (ES6+)",
-    icon: "imagens/habilidades/javascript.png",
-    description:
-      "Domínio da linguagem base da web, incluindo features modernas (ES6+), manipulação do DOM, assincronicidade (Promises, async/await) para criar interações complexas.",
+    id: "backend",
+    titleKey: "skills.categories.backend",
+    descriptionKey: "skills.categoryDescriptions.backend",
+    skills: [
+      { name: "Python", icon: "imagens/habilidades/python.png" },
+      { name: "Node.js", short: "JS" },
+      { name: "APIs REST", short: "API" }
+    ]
   },
   {
-    id: 3,
-    name: "HTML5",
-    icon: "imagens/habilidades/html.png",
-    description:
-      "Estruturo páginas web com HTML semântico, garantindo acessibilidade, melhor SEO e uma base sólida para estilização e scripts.",
+    id: "database",
+    titleKey: "skills.categories.database",
+    descriptionKey: "skills.categoryDescriptions.database",
+    skills: [
+      { name: "PostgreSQL", short: "PG" },
+      { name: "Firebase", short: "FB" },
+      { name: "Supabase", short: "SB" }
+    ]
   },
   {
-    id: 4,
-    name: "CSS3",
-    icon: "imagens/habilidades/css.png",
-    description:
-      "Estilizo componentes e layouts responsivos utilizando conceitos avançados de CSS, como Flexbox, Grid Layout, e variáveis CSS para temas dinâmicos.",
+    id: "tools",
+    titleKey: "skills.categories.tools",
+    descriptionKey: "skills.categoryDescriptions.tools",
+    skills: [
+      { name: "Git", icon: "imagens/github.png" },
+      { name: "GitHub", short: "GH" },
+      { name: "Docker", short: "DK" },
+      { name: "Figma", icon: "imagens/habilidades/figma.png" },
+      { name: "npm", short: "npm" }
+    ]
   },
   {
-    id: 5,
-    name: "Python",
-    icon: "imagens/habilidades/python.png",
-    description:
-      "Desenvolvo APIs RESTful e gerencio o ambiente de back-end para aplicações full-stack, utilizando o ecossistema do Node.js com frameworks como Express.",
-  },
-  {
-    id: 6,
-    name: "Git",
-    icon: "imagens/github.png",
-    description:
-      "Utilizo Git para controle de versão de projetos, trabalhando com branches, merges e colaborando em equipe através de plataformas como GitHub e GitLab.",
-  },
-  {
-    id: 7,
-    name: "Bootstrap",
-    icon: "imagens/habilidades/bootstrap.png",
-    description: "Framework para estilização de design responsivos para css",
-  },
-  {
-    id: 8,
-    name: "Figma",
-    icon: "imagens/habilidades/figma.png",
-    description:
-      "Uma ferramenta utilizada para criar mockoup de pre-visualizações de design de alta fidelidade",
-  },
-  // Adicione mais 3 habilidades para completar o grid 3x3
+    id: "ai",
+    titleKey: "skills.categories.ai",
+    descriptionKey: "skills.categoryDescriptions.ai",
+    skills: [
+      { name: "Inteligência Artificial", short: "AI" }
+    ]
+  }
 ];
 
-// Variavel para quando passar o mouse
 const Skills = () => {
-  // Estado para guardar a habilidade que está em hover
-  const [activeSkill, setActiveSkill] = useState(null);
   const { t } = useTranslation();
-
-  const handleMouseEnter = (skill) => {
-    setActiveSkill(skill);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveSkill(null);
-  };
+  const totalSkills = skillGroups.reduce((total, group) => total + group.skills.length, 0);
 
   return (
     <section id="habilidades" className={styles.skills}>
       <div className={styles.container}>
-        {/* Coluna da Esquerda: Grid de Habilidades */}
-        <div className={styles.skillsGrid} onMouseLeave={handleMouseLeave}>
-          {skillsData.map((skill) => (
-            <div
-              key={skill.id}
-              className={styles.skillCard}
-              onMouseEnter={() => handleMouseEnter(skill)}
-            >
-              <img src={skill.icon} alt={skill.name} />
+        <header className={styles.hero}>
+          <div className={styles.heroTopline}>
+            <span className={styles.eyebrow}>{t("skills.eyebrow")}</span>
+            <span className={styles.heroIndex}>01 — 05 / TOOLKIT</span>
+          </div>
+
+          <div className={styles.heroMain}>
+            <div className={styles.heroCopy}>
+              <h2 className={styles.title}>
+                {t("skills.heroLineOne")}<br />
+                <span>{t("skills.heroLineTwo")}</span>
+              </h2>
+              <p className={styles.subtitle}>{t("skills.subtitle")}</p>
             </div>
+
+            <div className={styles.heroArt} aria-hidden="true">
+              <div className={styles.artGlow} />
+              <div className={`${styles.artRing} ${styles.artRingOne}`} />
+              <div className={`${styles.artRing} ${styles.artRingTwo}`} />
+              <div className={styles.artCore}>
+                <span>{"</>"}</span>
+              </div>
+              <span className={`${styles.artNode} ${styles.artNodeOne}`}>JS</span>
+              <span className={`${styles.artNode} ${styles.artNodeTwo}`}>AI</span>
+              <span className={`${styles.artNode} ${styles.artNodeThree}`}>UI</span>
+            </div>
+          </div>
+
+          <div className={styles.heroBottom}>
+            <span>{t("skills.heroFootnote")}</span>
+            <div className={styles.stats}>
+              <div><strong>{String(totalSkills).padStart(2, "0")}</strong><span>{t("skills.technologiesLabel")}</span></div>
+              <i />
+              <div><strong>05</strong><span>{t("skills.areasLabel")}</span></div>
+            </div>
+          </div>
+        </header>
+
+        <div className={styles.sectionHeading}>
+          <div>
+            <span className={styles.sectionEyebrow}>{t("skills.stackLabel")}</span>
+            <h3>{t("skills.organizedTitle")}</h3>
+          </div>
+          <p>{t("skills.organizedDescription")}</p>
+        </div>
+
+        <div className={styles.skillGrid}>
+          {skillGroups.map((group, index) => (
+            <article
+              className={`${styles.category} ${index === 0 ? styles.categoryFeatured : ""} ${group.id === "ai" ? styles.categoryAi : ""}`}
+              key={group.id}
+            >
+              <div className={styles.categoryTop}>
+                <span className={styles.categoryNumber}>0{index + 1}</span>
+                <span className={styles.categoryCount}>{String(group.skills.length).padStart(2, "0")} {t("skills.itemsLabel")}</span>
+              </div>
+
+              <div className={styles.categoryHeading}>
+                <h4>{t(group.titleKey)}</h4>
+                <p>{t(group.descriptionKey)}</p>
+              </div>
+
+              <div className={styles.skillList}>
+                {group.skills.map((skill) => (
+                  <div className={styles.skill} key={skill.name}>
+                    <span className={styles.skillIcon}>
+                      {skill.icon ? <img src={skill.icon} alt="" loading="lazy" /> : <span>{skill.short}</span>}
+                    </span>
+                    <span className={styles.skillName}>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
 
-        {/* Coluna da Direita: Detalhes da Habilidade */}
-        <div className={styles.skillDetails}>
-          <h2 className={styles.title}>{t("skills.title")}</h2>
-
-          <div className={styles.descriptionContainer}>
-            {activeSkill ? (
-              <>
-                <h3>{activeSkill.name}</h3>
-                <p>{t(activeSkill.descriptionKey)}</p>
-              </>
-            ) : (
-              <p
-                className={styles.defaultText}
-                dangerouslySetInnerHTML={{ __html: t("skills.hover_prompt") }}
-              />
-            )}
-          </div>
-        </div>
+        <footer className={styles.footerNote}>
+          <span className={styles.footerMark}>✳</span>
+          <p>{t("skills.footerNote")}</p>
+        </footer>
       </div>
     </section>
   );

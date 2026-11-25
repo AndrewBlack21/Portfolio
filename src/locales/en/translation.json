@@ -29,7 +29,37 @@
     "python_desc": "I develop RESTful APIs and manage the back-end environment for full-stack applications, using the Node.js ecosystem with frameworks like Express.",
     "git_desc": "I use Git for project version control, working with branches, merges, and collaborating in teams through platforms like GitHub and GitLab.",
     "bootstrap_desc": "A framework for styling responsive designs with CSS.",
-    "figma_desc": "A tool used to create high-fidelity design mockups and previews."
+    "figma_desc": "A tool used to create high-fidelity design mockups and previews.",
+    "eyebrow": "GROWING TOOLKIT",
+    "subtitle": "Technologies and tools I use to turn ideas into digital solutions.",
+    "detailsLabel": "EXPLORE THE TECHNOLOGY",
+    "selectTitle": "Explore my skills",
+    "selectDescription": "Select or hover over a technology to see how it fits into my development workflow.",
+    "categories": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "database": "Databases",
+      "tools": "Tools and technologies",
+      "ai": "Artificial Intelligence"
+    },
+    "overviewLabel": "Skills overview",
+    "technologiesLabel": "technologies",
+    "areasLabel": "areas",
+    "categoryDescriptions": {
+      "frontend": "Web interfaces and mobile experiences.",
+      "backend": "Application logic, services and integrations.",
+      "database": "Data storage, querying and management.",
+      "tools": "Development workflow, design and environment.",
+      "ai": "Intelligent tools supporting the development process."
+    },
+    "heroLineOne": "Technology that turns",
+    "heroLineTwo": "ideas into experiences.",
+    "heroFootnote": "Knowledge applied to real projects and continuous learning.",
+    "stackLabel": "MY ECOSYSTEM",
+    "organizedTitle": "Tools to build solutions",
+    "organizedDescription": "A structured overview of the technologies that are part of my development journey.",
+    "itemsLabel": "ITEMS",
+    "footerNote": "My toolkit keeps evolving: I study, test and apply new tools as each project brings new challenges."
   },
   "projects": {
     "title": "My Projects",

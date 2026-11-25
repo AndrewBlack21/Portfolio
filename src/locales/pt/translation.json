@@ -17,7 +17,37 @@
     "python_desc": "Desenvolvo APIs RESTful e gerencio o ambiente de back-end para aplicações full-stack, utilizando o ecossistema do Node.js com frameworks como Express.",
     "git_desc": "Utilizo Git para controle de versão de projetos, trabalhando com branches, merges e colaborando em equipe através de plataformas como GitHub e GitLab.",
     "bootstrap_desc": "Framework para estilização de design responsivos para css",
-    "figma_desc": "Uma ferramenta utilizada para criar mockoup de pre-visualizações de design de alta fidelidade"
+    "figma_desc": "Uma ferramenta utilizada para criar mockoup de pre-visualizações de design de alta fidelidade",
+    "eyebrow": "STACK EM EVOLUÇÃO",
+    "subtitle": "Tecnologias e ferramentas que utilizo para transformar ideias em soluções digitais.",
+    "detailsLabel": "CONHEÇA A TECNOLOGIA",
+    "selectTitle": "Explore minhas habilidades",
+    "selectDescription": "Selecione ou passe o cursor sobre uma tecnologia para ver como ela entra no meu fluxo de desenvolvimento.",
+    "categories": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "database": "Banco de dados",
+      "tools": "Ferramentas e tecnologias",
+      "ai": "Inteligência Artificial"
+    },
+    "overviewLabel": "Visão geral das habilidades",
+    "technologiesLabel": "tecnologias",
+    "areasLabel": "áreas",
+    "categoryDescriptions": {
+      "frontend": "Interfaces web e experiências mobile.",
+      "backend": "Lógica de aplicação, serviços e integrações.",
+      "database": "Armazenamento, consulta e gestão de dados.",
+      "tools": "Fluxo de desenvolvimento, design e ambiente.",
+      "ai": "Ferramentas inteligentes como apoio ao desenvolvimento."
+    },
+    "heroLineOne": "Tecnologia que transforma",
+    "heroLineTwo": "ideias em experiências.",
+    "heroFootnote": "Conhecimento aplicado em projetos reais e estudos contínuos.",
+    "stackLabel": "MEU ECOSSISTEMA",
+    "organizedTitle": "Ferramentas para construir soluções",
+    "organizedDescription": "Uma visão organizada das tecnologias que fazem parte da minha jornada em desenvolvimento.",
+    "itemsLabel": "ITENS",
+    "footerNote": "Minha stack está em constante evolução: estudo, testo e aplico novas ferramentas conforme os desafios de cada projeto."
   },
   "projects": {
     "title": "Meus Projetos",
